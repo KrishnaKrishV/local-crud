@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <a routerLink="/add">Add Item</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 offset-sm-4 mt-4">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+                <tr *ngFor="let row of rows; let i = index">
+                    <td>{{row.name}}</td>
+                    <td>{{row.age}}</td>
+                    <td>
+                        <button class="btn btn-warning mr-3" (click)="onEdit(i)" type="button">Edit</button>
+                        <button class="btn btn-danger" (click)="onDelete(i)" type="button">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
